@@ -16,6 +16,7 @@ namespace SalesWebMvc
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ISeedingService, SeedingService>();
             
             var app = builder.Build();
 
@@ -26,8 +27,12 @@ namespace SalesWebMvc
                 // The default HSTS value is 30 days.  You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+           
+                
             app.UseHttpsRedirection();
+
+            SeedDataBase();
+
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -39,6 +44,14 @@ namespace SalesWebMvc
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+
+            void SeedDataBase()
+            {
+                using(var scope = app.Services.CreateScope())
+                {
+                    scope.ServiceProvider.GetRequiredService<ISeedingService>().Seed();
+                }
+            }
         }
     }
 }

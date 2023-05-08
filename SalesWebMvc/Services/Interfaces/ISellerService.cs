@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using SalesWebMvc.Models;
+﻿using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Services.Interfaces
 {
     public interface ISellerService
     {
         List<Seller> FindAll();
-        void Insert<Seller>(Seller obj);
+        void Insert(Seller obj);
     }
 }

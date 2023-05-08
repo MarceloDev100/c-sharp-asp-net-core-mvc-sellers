@@ -21,6 +21,7 @@ namespace SalesWebMvc
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ISeedingService, SeedingService>();
             builder.Services.AddScoped<ISellerService, SellerService>();
+            builder.Services.AddScoped<IDepartmentService, DepartmentService>();
             
             var app = builder.Build();
 

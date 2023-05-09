@@ -4,6 +4,6 @@ namespace SalesWebMvc.Services.Interfaces
 {
     public interface IDepartmentService
     {
-        List<Department> FindAll(); 
+        Task<List<Department>> FindAllAsync(); 
     }
 }

@@ -1,0 +1,34 @@
+﻿nav{
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.date-box {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.container-fluid {
+    height: 90px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-right: 80px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+button {
+    height: 40px;
+    width: 100px;
+}
+
+.total-sales-title {
+    font-size: 1.5em;
+}
